@@ -7,7 +7,7 @@ Com arquivos de codigos, automações e diversas funções...
                         
 /////////////////////////////////////////////////////////////////////////////////////////
 
-🕒 Horário atual no Brasil: <!--TIME-->Carregando<!--ENDTIME-->
+🕒 Horário atual no Brasil: <!--TIME-->25/11/2025 15:50:21<!--ENDTIME-->
 
 
 ![Coelhoderoma](assets/coelho_roma%20(1).jpg)
