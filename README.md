@@ -10,4 +10,4 @@ Com arquivos de codigos, automações e diversas funções...
 🕒 Horário atual no Brasil: <!--TIME-->Carregando<!--ENDTIME-->
 
 
-[Coelhoderoma](assets/coelho_roma%20(1).jpg)
+![Coelhoderoma](assets/coelho_roma%20(1).jpg)
