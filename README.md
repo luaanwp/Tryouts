@@ -6,7 +6,7 @@ Com arquivos de codigos, automações e diversas funções...
 ![gif](assets/graph.gif)
                         
 ////////////////////////////////////////////////////////////////
-
+Teste (Não funciona corretamente)
 🕒 Horário atual no Brasil(atualiza +- a cada 5 ou 10 minutos): <!--TIME-->25/11/2025 17:34:01<!--ENDTIME-->
 
 
