@@ -1,8 +1,11 @@
 name: Atualizar hora do Brasil
 
+permissions:
+  contents: write
+
 on:
   schedule:
-    - cron: "* * * * *"  # Atualiza a cada 1 minuto
+    - cron: "* * * * *" # Atualiza a cada 1 minuto
   workflow_dispatch:
 
 jobs:
@@ -12,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false   # <<< ESSENCIAL!
 
       - name: Obter hora do Brasil
         run: |
@@ -23,8 +28,9 @@ jobs:
 
       - name: Commit e Push
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/luaanwp/Tryouts.git
           git add README.md
           git commit -m "Atualizando hora: $TIME" || echo "Nenhuma mudança para commitar"
           git push
