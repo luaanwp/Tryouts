@@ -1,0 +1,30 @@
+name: Atualizar hora do Brasil
+
+on:
+  schedule:
+    - cron: "* * * * *"  # Atualiza a cada 1 minuto
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Obter hora do Brasil
+        run: |
+          echo "TIME=$(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M:%S')" >> $GITHUB_ENV
+
+      - name: Atualizar README
+        run: |
+          sed -i "s|<!--TIME-->.*<!--ENDTIME-->|<!--TIME-->$TIME<!--ENDTIME-->|" README.md
+
+      - name: Commit e Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "Atualizando hora: $TIME" || echo "Nenhuma mudança para commitar"
+          git push

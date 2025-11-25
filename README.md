@@ -7,6 +7,7 @@ Com arquivos de codigos, automações e diversas funções...
                         
 /////////////////////////////////////////////////////////////////////////////////////////
 
-![Hora do Brasil](https://img.shields.io/endpoint?url=https://worldtimeapi.org/api/timezone/America/Sao_Paulo)
+🕒 Horário atual no Brasil: <!--TIME-->Carregando<!--ENDTIME-->
 
-![Coelhodaroma](assets/coelho%20roma.jpg)
+
+<img src="assets/coelho_roma.jpg" style="width:100%; max-width:300px;" alt="Coelho_de_roma">
