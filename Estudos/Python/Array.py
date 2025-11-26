@@ -11,4 +11,5 @@ print (num_2)
 
 #Array 
 a = np.array(num)
-print (a)
+a2 = 2*a
+print (a2)
