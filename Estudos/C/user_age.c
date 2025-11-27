@@ -2,7 +2,7 @@
 int main() 
 {
     char resposta;
-    printf("Você é maior de idade?(responda com S ou N): ");
+    printf("Voce e maior de idade?(responda com S ou N): ");
     scanf("%c", &resposta);
     
     switch (resposta)
