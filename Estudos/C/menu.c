@@ -1,14 +1,10 @@
 #include <stdio.h>
 int main()
 {
-    int numero;
-    float n1;
-    float n2;
-    float soma;
-    float sub;
-    float mult;
-    float div;
-
+    int numero = 0;
+    float n1, n2;
+    float soma, sub, mult, div;
+    while (numero !=5){
     printf("1 - Somar dois numeros\n");
     printf("2 - Subtrair\n");
     printf("3 - Multiplicar\n");
@@ -27,7 +23,7 @@ int main()
 
         soma = n1 + n2;
 
-        printf("Resultado: %.2f", soma);
+        printf("Resultado: %.2f\n", soma);
         break;
     case 2:
         printf("Digite o primeiro numero: ");
@@ -36,7 +32,7 @@ int main()
         scanf("%f", &n2);
 
         sub = n1 - n2;
-        printf("Resultado: %.2f", sub);
+        printf("Resultado: %.2f\n", sub);
 
         break;
     case 3:
@@ -46,7 +42,7 @@ int main()
         scanf("%f", &n2);
         mult = n1 * n2;
 
-        printf("Resultado: %.2f", mult);
+        printf("Resultado: %.2f\n", mult);
 
         break;
     case 4:
@@ -64,14 +60,16 @@ int main()
 
         div = n1 / n2;
 
-        printf("Resultado: %.2f", div);
+        printf("Resultado: %.2f\n", div);
 
         break;
 
     case 5:
         break;
     default:
-        printf("Numero invalido!");
+        printf("Numero invalido!\n");
     }
+  }
+
     return 0;
 }
