@@ -52,12 +52,15 @@ int main()
     case 4:
         printf("Digite o primeiro numero: ");
         scanf("%f", &n1);
-            if (n1 == 0){
-            printf("Nao e possivel dividir por zero!");
-            break;
-            }
+            
         printf("Digite o segundo numero: ");
         scanf("%f", &n2);
+
+        if (n1 == 0)
+        {
+            printf("Nao e possivel dividir por zero!");
+            break;
+        }
 
         div = n1 / n2;
 
