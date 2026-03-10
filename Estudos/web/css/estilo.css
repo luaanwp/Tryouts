@@ -12,7 +12,6 @@ body {
     line-height: 1.8;
 }
 
-/* ===== HERO - FUNDO DO TÍTULO PRINCIPAL ===== */
 .hero {
     width: 100%;
     min-height: 180px;
@@ -66,7 +65,7 @@ body {
     color: #0d4a8a;
 }
 
-/* ===== LAYOUT PRINCIPAL ===== */
+
 .layout {
     display: flex;
     max-width: 1200px;
@@ -76,13 +75,13 @@ body {
     align-items: flex-start;
 }
 
-/* ===== CONTEÚDO PRINCIPAL ===== */
+
 .conteudo {
     flex: 1;
     min-width: 0;
 }
 
-/* ===== INTRODUÇÃO ===== */
+
 .intro {
     margin-bottom: 40px;
     padding-bottom: 30px;
@@ -102,7 +101,7 @@ body {
     margin-top: 10px;
 }
 
-/* ===== SEÇÕES DE ATRAÇÕES ===== */
+
 .atracao {
     margin-bottom: 50px;
     padding-bottom: 40px;
@@ -138,7 +137,7 @@ body {
     line-height: 1.85;
 }
 
-/* ===== SIDEBAR ===== */
+
 .sidebar {
     width: 240px;
     flex-shrink: 0;
