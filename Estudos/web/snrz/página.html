@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas - Gráfico de Barras</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #1a1a2e;
+        }
+
+        canvas {
+            border-radius: 12px;
+            background: #16213e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="grafico" width="500" height="350"></canvas>
+
+    <script>
+        const canvas = document.getElementById("grafico");
+        const ctx = canvas.getContext("2d");
+
+        const dados = [
+            { label: "Jan", valor: 120, cor: "#e94560" },
+            { label: "Fev", valor: 200, cor: "#0f3460" },
+            { label: "Mar", valor: 150, cor: "#533483" },
+            { label: "Abr", valor: 280, cor: "#e94560" },
+            { label: "Mai", valor: 90, cor: "#0f3460" },
+            { label: "Jun", valor: 230, cor: "#533483" },
+        ];
+
+        const padding = 50;
+        const maxValor = 300;
+        const larguraBarra = 50;
+        const espacamento = 30;
+
+        // Eixo Y
+        ctx.strokeStyle = "#ffffff33";
+        ctx.lineWidth = 1;
+        for (let i = 0; i <= 3; i++) {
+            const y = padding + (i * (canvas.height - padding * 2) / 3);
+            ctx.beginPath();
+            ctx.moveTo(padding, y);
+            ctx.lineTo(canvas.width - padding, y);
+            ctx.stroke();
+
+            ctx.fillStyle = "#aaa";
+            ctx.font = "12px Arial";
+            ctx.fillText(300 - i * 100, 10, y + 4);
+        }
+
+        // Barras
+        dados.forEach((d, i) => {
+            const x = padding + i * (larguraBarra + espacamento);
+            const alturaMaxima = canvas.height - padding * 2;
+            const altura = (d.valor / maxValor) * alturaMaxima;
+            const y = canvas.height - padding - altura;
+
+            // Sombra
+            ctx.shadowColor = d.cor;
+            ctx.shadowBlur = 10;
+
+            // Barra
+            ctx.fillStyle = d.cor;
+            ctx.beginPath();
+            ctx.roundRect(x, y, larguraBarra, altura, 6);
+            ctx.fill();
+
+            ctx.shadowBlur = 0;
+
+            // Valor em cima
+            ctx.fillStyle = "#fff";
+            ctx.font = "bold 13px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText(d.valor, x + larguraBarra / 2, y - 8);
+
+            // Label embaixo
+            ctx.fillStyle = "#aaa";
+            ctx.font = "13px Arial";
+            ctx.fillText(d.label, x + larguraBarra / 2, canvas.height - padding + 18);
+        });
+
+        // Título
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 16px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("Vendas por Mês", canvas.width / 2, 25);
+    </script>
+
+</body>
+
+</html>
